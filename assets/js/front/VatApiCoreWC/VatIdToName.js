@@ -58,7 +58,7 @@ export class VatIdToName {
         const zipCodeMatch = fullString.match(/^\d{4}/);
         const cityName = fullString.split(" ")[1];
 
-        if (! zipCodeMatch) {
+        if (zipCodeMatch) {
             this.zipElement.value = zipCodeMatch[0];
         } else {
             console.log("No zip code found");
