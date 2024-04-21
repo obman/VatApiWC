@@ -54,17 +54,24 @@ export class VatIdToName {
         }
 
         const addressArray = companyData.address.split(', ');
-        const fullString = addressArray[2];
+        const fullString = addressArray[addressArray.length - 1];
         const zipCodeMatch = fullString.match(/^\d{4}/);
+        const cityName = fullString.split(" ")[1];
 
-        if (zipCodeMatch) {
+        if (! zipCodeMatch) {
             this.zipElement.value = zipCodeMatch[0];
         } else {
-            // console.log("No zip code found");
+            console.log("No zip code found");
+        }
+
+        if (cityName) {
+            this.cityElement.value = cityName;
+        }
+        else {
+            console.log("No city found");
         }
 
         this.companyElement.value = companyData.name;
         this.addressElement.value = addressArray[0];
-        this.cityElement.value = addressArray[1];
     }
 }
