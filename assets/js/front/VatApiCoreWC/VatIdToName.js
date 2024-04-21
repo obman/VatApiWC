@@ -12,44 +12,8 @@ export class VatIdToName {
         this.cityElement    = document.querySelector(city_target);
     }
 
-    getApiUrl() {
-        return this.apiUrl;
-    }
-
-    getBearerToken() {
-        return this.bearerToken;
-    }
-
-    getLicense() {
-        return this.license;
-    }
-
-    getDomain() {
-        return this.domain;
-    }
-
-    getCompanyElement() {
-        return this.companyElement;
-    }
-
     getVatIdElement() {
         return this.vatidElement;
-    }
-
-    getCountryElement() {
-        return this.countryElement;
-    }
-
-    getAddressElement() {
-        return this.addressElement;
-    }
-
-    getZipElement() {
-        return this.zipElement;
-    }
-
-    getCityElement() {
-        return this.cityElement;
     }
 
     async apiCallVatIdToName() {
@@ -57,19 +21,19 @@ export class VatIdToName {
             vatId       = this.vatidElement.value,
             countryCode = this.countryElement.options[this.countryElement.selectedIndex].value,
             response = await fetch(
-                this.getApiUrl(),
+                this.apiUrl,
                 {
                     method: 'POST',
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer ' + this.getBearerToken()
+                        'Authorization': 'Bearer ' + this.bearerToken
                     },
                     body: JSON.stringify({
                         'vatid': vatId,
                         'country': countryCode,
-                        'license': this.getLicense(),
-                        'domain': this.getDomain()
+                        'license': this.license,
+                        'domain': this.domain
                     })
                 }
             )
@@ -94,14 +58,13 @@ export class VatIdToName {
         const zipCodeMatch = fullString.match(/^\d{4}/);
 
         if (zipCodeMatch) {
-            const zipCode = zipCodeMatch[0];
-            this.getZipElement().value = zipCodeMatch[0];
+            this.zipElement.value = zipCodeMatch[0];
         } else {
             // console.log("No zip code found");
         }
 
-        this.getCompanyElement().value = companyData.name;
-        this.getAddressElement().value = addressArray[0];
-        this.getCityElement().value = addressArray[1];
+        this.companyElement.value = companyData.name;
+        this.addressElement.value = addressArray[0];
+        this.cityElement.value = addressArray[1];
     }
 }
