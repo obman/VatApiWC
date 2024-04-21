@@ -31,7 +31,7 @@ GeoWC uses various high-performance geocoding APIs to ensure a smooth and speedy
 
 ## Installation
 
-1. **Upload:** `GeoWC` folder to the `/wp-content/plugins/` directory
+1. **Upload:** `VatApiWC` folder to the `/wp-content/plugins/` directory
 2. **Activate:** Navigate to the 'Plugins' menu in your WordPress dashboard and activate GeoWC.
 3. You need to create account on https://geowc.sample.si
 4. Create client project
@@ -43,26 +43,17 @@ GeoWC uses various high-performance geocoding APIs to ensure a smooth and speedy
 
 ### API Type
 
-Choose the geocoding API that best suits your needs.
+Choose the VAT ID API validator that best suits your needs.
 Different APIs offer varying data and accuracy levels.  
 We recommend trying each one to find the optimal fit for your store.
 
-*Note: Currently  are 3 types of geocode API available.*
+*Note: Currently  are 1 types of VatID API available.*
 
 ### API Method: Address to ZIP and City name or ZIP to City name
 
 Select the desired geocoding method:
 
-* **Address to ZIP/Postcode and City:** Check this box to automatically fill both city and ZIP/postal code based on the entered address.
-* **ZIP/Postcode to City:** Leave unchecked if you only want to fill the city based on the ZIP/postal code.
-
-*Note: Currently only API type 1 offers both options.*
-
-### API Method: Get multiple address based on input address
-
-This method will provide multiple address names with uncomplete address input.
-
-*Note: Currently works only with API type 3.*
+* **VAT ID to Company name, Address, ZIP/Postcode and City:** Check this box to automatically fill all fileds based on the entered and validated VAT ID.
 
 ### Fields IDs
 
