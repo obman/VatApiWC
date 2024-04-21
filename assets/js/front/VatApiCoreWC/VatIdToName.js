@@ -49,29 +49,17 @@ export class VatIdToName {
             return false;
         }
 
-        if (! companyData.name || ! companyData.address) {
-            return false;
+        if (companyData.name) {
+            this.companyElement.value = companyData.name;
         }
-
-        const addressArray = companyData.address.split(', ');
-        const fullString = addressArray[addressArray.length - 1];
-        const zipCodeMatch = fullString.match(/^\d{4}/);
-        const cityName = fullString.split(" ")[1];
-
-        if (zipCodeMatch) {
-            this.zipElement.value = zipCodeMatch[0];
-        } else {
-            console.log("No zip code found");
+        if (companyData.address) {
+            this.addressElement.value = companyData.address;
         }
-
-        if (cityName) {
-            this.cityElement.value = cityName;
+        if (companyData.zip) {
+            this.zipElement.value = companyData.zip;
         }
-        else {
-            console.log("No city found");
+        if (companyData.city) {
+            this.cityElement.value = companyData.city;
         }
-
-        this.companyElement.value = companyData.name;
-        this.addressElement.value = addressArray[0];
     }
 }
