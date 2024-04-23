@@ -1,8 +1,8 @@
 <?php
 
 /*
- * Plugin Name:       VatWC API plugin
- * Plugin URI:        https://github.com/obman/VatWC-Plugin
+ * Plugin Name:       VatApiWC API plugin
+ * Plugin URI:        https://github.com/obman/VatApiWC-plugin
  * Description:       Integrate GeoWC application APIs into WooCommerce checkout address fields.
  * Author:            obman
  * Version:           1.2.2
