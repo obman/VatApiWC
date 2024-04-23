@@ -15,7 +15,7 @@ Vat ID API plugin for WooCommerce checkout forms
 **Simplify your WooCommerce checkout with automatic location filling!**
 
 Save your customers time and frustration by automatically filling in their city and ZIP/postal code based on their address input.
-GeoWC uses various high-performance geocoding APIs to ensure a smooth and speedy checkout experience.
+VatApiWC uses various high-performance geocoding APIs to ensure a smooth and speedy checkout experience.
 
 ### Here's what GeoWC offers:
 
@@ -33,7 +33,7 @@ GeoWC uses various high-performance geocoding APIs to ensure a smooth and speedy
 
 1. **Upload:** `VatApiWC` folder to the `/wp-content/plugins/` directory
 2. **Activate:** Navigate to the 'Plugins' menu in your WordPress dashboard and activate GeoWC.
-3. You need to create account on https://geowc.sample.si
+3. You need to create account on https://geoapp.sample.si
 4. Create client project
 5. Get API credentials(Client ID and Client Secret) which you copy in plugin settings
 5. Generate license which you copy in plugin settings(License Key field)
